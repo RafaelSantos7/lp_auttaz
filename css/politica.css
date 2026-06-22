@@ -1,0 +1,378 @@
+/* ============================================================
+   politica.css — Página de Termos de Uso e Política de Privacidade
+   Importa o visual do site (style.css) e adiciona estilos
+   específicos desta página.
+   ============================================================ */
+
+/* Compensa o header fixo */
+.page-politica main,
+.page-politica .politica-hero {
+  padding-top: var(--header-h);
+}
+
+/* ----------------------------------------------------------
+   HERO DA PÁGINA
+   ---------------------------------------------------------- */
+.politica-hero {
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+  padding: 3rem 0 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.politica-hero__breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--gray-500);
+  margin-bottom: 1.25rem;
+}
+
+.politica-hero__breadcrumb a {
+  color: var(--blue);
+  transition: opacity 150ms ease;
+}
+.politica-hero__breadcrumb a:hover {
+  opacity: 0.75;
+}
+.politica-hero__breadcrumb svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.politica-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.625rem, 3vw, 2.25rem);
+  font-weight: 800;
+  color: var(--black);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.625rem;
+}
+
+.politica-hero__meta {
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+.politica-hero__meta strong {
+  color: var(--gray-700);
+}
+
+/* ----------------------------------------------------------
+   LAYOUT: sumário lateral + conteúdo
+   ---------------------------------------------------------- */
+.politica-main {
+  padding: 3.5rem 0 5rem;
+}
+
+.politica-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ----------------------------------------------------------
+   SUMÁRIO LATERAL (TOC)
+   ---------------------------------------------------------- */
+.politica-toc {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+}
+
+.politica-toc__inner {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 1.25rem 1.5rem;
+}
+
+.politica-toc__title {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.politica-toc__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.politica-toc__list a {
+  display: block;
+  font-size: 0.8125rem;
+  color: var(--gray-700);
+  padding: 0.3rem 0.625rem;
+  border-radius: var(--radius-sm);
+  transition: all 150ms ease;
+  line-height: 1.4;
+}
+
+.politica-toc__list a:hover {
+  color: var(--blue);
+  background: var(--gray-100);
+}
+
+.politica-toc__list a.active {
+  color: var(--blue);
+  background: #e8edf8;
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------
+   CONTEÚDO DOS TERMOS
+   ---------------------------------------------------------- */
+.politica-content {
+  min-width: 0; /* evita overflow no grid */
+}
+
+.politica-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--gray-100);
+  scroll-margin-top: calc(var(--header-h) + 2rem);
+}
+
+.politica-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.politica-section__title {
+  font-family: var(--font-display);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--gray-100);
+  line-height: 1.3;
+}
+
+/* Parágrafos */
+.politica-content p {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.8;
+  margin-bottom: 0.875rem;
+}
+.politica-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Links dentro do conteúdo */
+.politica-content a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 150ms ease;
+}
+.politica-content a:hover {
+  opacity: 0.75;
+}
+
+/* ----------------------------------------------------------
+   DEFINIÇÕES (dl)
+   ---------------------------------------------------------- */
+.politica-definitions {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.politica-definitions dt {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--black);
+  margin-top: 1.25rem;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--blue);
+}
+
+.politica-definitions dd {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.75;
+  margin-left: 0;
+  padding-left: 1.125rem;
+  margin-top: 0.25rem;
+}
+
+/* ----------------------------------------------------------
+   LISTAS
+   ---------------------------------------------------------- */
+.politica-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0.875rem 0 0.875rem 0;
+  padding-left: 0;
+}
+
+.politica-list li {
+  font-size: 0.9375rem;
+  color: var(--gray-700);
+  line-height: 1.75;
+  padding: 0.5rem 0.875rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gray-200);
+  list-style: none;
+}
+
+.politica-list li strong {
+  color: var(--black);
+}
+
+/* Lista com letras (a, b, c...) */
+.politica-list--alpha {
+  counter-reset: alpha-counter;
+}
+
+.politica-list--alpha li {
+  counter-increment: alpha-counter;
+  padding-left: 2.5rem;
+  position: relative;
+  border-left: none;
+  background: var(--gray-50);
+}
+
+.politica-list--alpha li::before {
+  content: counter(alpha-counter, lower-alpha) ")";
+  position: absolute;
+  left: 0.875rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: var(--blue);
+}
+
+/* ----------------------------------------------------------
+   CARD DE CONTATO (encarregado)
+   ---------------------------------------------------------- */
+.politica-contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: #e8edf8;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  margin-top: 1rem;
+}
+
+.politica-contact-card svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.politica-contact-card div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.politica-contact-card strong {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+.politica-contact-card span {
+  font-size: 0.875rem;
+  color: var(--gray-700);
+}
+
+/* ----------------------------------------------------------
+   DATA DE ATUALIZAÇÃO (última linha)
+   ---------------------------------------------------------- */
+.politica-update {
+  display: inline-block;
+  margin-top: 1.5rem !important;
+  font-size: 0.8125rem !important;
+  color: var(--gray-500) !important;
+  padding: 0.5rem 1rem;
+  background: var(--gray-50);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--gray-200);
+}
+
+.politica-update strong {
+  color: var(--gray-700);
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVIDADE — TABLET
+   ---------------------------------------------------------- */
+@media (max-width: 900px) {
+  .politica-layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .politica-toc {
+    position: static;
+  }
+
+  .politica-toc__inner {
+    /* No tablet o sumário vira um accordion horizontal scrollável */
+    overflow-x: auto;
+  }
+
+  .politica-toc__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+  }
+
+  .politica-toc__list a {
+    white-space: nowrap;
+    border: 1px solid var(--gray-200);
+    padding: 0.35rem 0.75rem;
+  }
+
+  .politica-toc__list a.active {
+    border-color: var(--blue);
+  }
+}
+
+/* ----------------------------------------------------------
+   RESPONSIVIDADE — MOBILE
+   ---------------------------------------------------------- */
+@media (max-width: 600px) {
+  .politica-hero {
+    padding: 2rem 0 1.75rem;
+  }
+  .politica-main {
+    padding: 2rem 0 3.5rem;
+  }
+
+  .politica-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .politica-section__title {
+    font-size: 1.0625rem;
+  }
+
+  .politica-definitions dt {
+    margin-top: 1rem;
+  }
+
+  .politica-contact-card {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
