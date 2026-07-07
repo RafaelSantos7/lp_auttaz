@@ -1,7 +1,3 @@
-/* ============================================================
-   style.css — PontoGO Landing Page (revisão 3)
-   ============================================================ */
-
 /* ----------------------------------------------------------
    1. TOKENS
    ---------------------------------------------------------- */
@@ -56,6 +52,7 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 body {
   font-family: var(--font-body);
@@ -64,6 +61,7 @@ body {
   color: var(--black);
   background: var(--white);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 img,
 svg {
@@ -102,13 +100,33 @@ button {
 .section {
   padding: 80px 0;
 }
+.container,
+.hero__inner,
+.hero__copy,
+.hero__form-wrap,
+.contato__form-wrap,
+.form__group,
+.form__row {
+  min-width: 0;
+}
+
+input,
+select,
+textarea {
+  min-width: 0;
+}
+
+/* LOGO DAS EMPRESAS */
+.logo-wide {
+  transform: scale(1.5);
+}
 
 /* ----------------------------------------------------------
    4. TIPOGRAFIA
    ---------------------------------------------------------- */
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-size: clamp(1.25rem, 3vw, 2rem);
   font-weight: 700;
   line-height: 1.18;
   color: var(--black);
@@ -204,13 +222,13 @@ button {
       Footer: assets/img/logo-white.png
    ---------------------------------------------------------- */
 .logo-img {
-  height: 3.5rem;
+  height: 4.5rem;
   width: auto;
   display: block;
   object-fit: contain;
 }
 .logo-img--footer {
-  height: 2.5rem;
+  height: 3.5rem;
 }
 
 /* ----------------------------------------------------------
@@ -512,27 +530,105 @@ button {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
+}
+.hero__headline-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0;
+  width: 100%;
+  margin-bottom: 1.75rem;
 }
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4.5vw, 3.25rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--black);
-  margin-bottom: 1.25rem;
+  font-size: clamp(2rem, 2.8vw, 2.55rem);
+  font-weight: 700;
+  line-height: 1.2;
+  max-width: 620px;
+  width: 100%;
+  color: var(--blue);
+  margin: 0;
   letter-spacing: -0.02em;
 }
+.hero__brand-logo {
+  width: clamp(170px, 20vw, 270px);
+  height: auto;
+  flex-shrink: 0;
+  object-fit: contain;
+}
 .hero__desc {
-  font-size: 1.0625rem;
+  font-size: clamp(1.05rem, 1.4vw, 1.32rem);
   color: var(--gray-700);
-  line-height: 1.7;
-  margin-bottom: 2rem;
-  max-width: 46ch;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  max-width: 580px;
+}
+.hero__desc strong {
+  color: var(--blue);
+  font-weight: 700;
 }
 .hero__btns {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  gap: 1.25rem;
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+.hero__btns .btn {
+  flex: 1;
+  min-height: 58px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+  box-shadow: none;
+}
+.hero__btns .btn:hover {
+  background: var(--blue-hover);
+  border-color: var(--blue-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(11, 30, 70, 0.25);
+}
+.hero__btns .btn--primary,
+.hero__btns .btn--outline {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+}
+.hero__trial {
+  display: flex;
+  align-items: center;
   gap: 0.75rem;
+  font-size: 1rem;
+  color: var(--gray-700);
+}
+.hero__trial-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--white);
+  flex-shrink: 0;
+}
+
+.hero__form-wrap {
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+  min-width: 0;
+}
+
+.hero .contato__form-wrap {
+  width: 100%;
+  max-width: 100%;
+  box-shadow: var(--shadow-xl);
 }
 
 /* ----------------------------------------------------------
@@ -1066,7 +1162,7 @@ button {
    13. FOOTER
    ---------------------------------------------------------- */
 .footer {
-  background: var(--dark);
+  background: var(--blue);
   color: var(--white);
 }
 .footer__inner {
@@ -1082,7 +1178,7 @@ button {
 }
 .footer__tagline {
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--white);
   line-height: 1.65;
   max-width: 28ch;
   margin-bottom: 1.5rem;
@@ -1099,7 +1195,7 @@ button {
   height: 36px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.08);
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--white);
   transition: all var(--t-normal);
 }
 .social-link:hover {
@@ -1113,7 +1209,7 @@ button {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: var(--white);
   margin-bottom: 1.25rem;
 }
 .footer__nav-list {
@@ -1123,7 +1219,7 @@ button {
 }
 .footer__nav-list a {
   font-size: 0.9375rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
   transition: color var(--t-fast);
 }
 .footer__nav-list a:hover {
@@ -1139,13 +1235,13 @@ button {
   align-items: flex-start;
   gap: 0.75rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--white);
   line-height: 1.5;
 }
 .footer__contact-list svg {
-  flex-shrink: 0;
-  margin-top: 2px;
-  opacity: 0.55;
+  color: #fff;
+  stroke: #fff;
+  fill: none;
 }
 .footer__bottom-bar {
   background: rgba(0, 0, 0, 0.3);
@@ -1195,7 +1291,7 @@ button {
 }
 .footer__copy {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: var(--white);
 }
 
 /* ----------------------------------------------------------
@@ -1220,6 +1316,16 @@ button {
   .hero__visual {
     order: -1;
     min-height: 260px;
+  }
+  .hero__form-wrap {
+    order: -1;
+    max-width: 640px;
+  }
+  .hero__headline-row {
+    align-items: flex-start;
+  }
+  .hero__brand-logo {
+    width: clamp(150px, 28vw, 230px);
   }
   .float-card--top {
     right: 0;
@@ -1258,23 +1364,75 @@ button {
   }
 }
 
+@media (max-width: 768px) {
+  .logo-img {
+    height: 3.5rem;
+  }
+
+  .header {
+    height: 64px;
+  }
+
+  .header__inner {
+    height: 64px;
+  }
+
+  .hero {
+    padding-top: 95px;
+  }
+}
+
 /* ----------------------------------------------------------
    15. RESPONSIVIDADE — MOBILE (≤ 600px)
    ---------------------------------------------------------- */
 @media (max-width: 600px) {
   :root {
     --header-h: 64px;
+    --container-px: 1rem;
+  }
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 100%;
   }
   .section {
     padding: 56px 0;
   }
   .hero {
-    padding-top: calc(var(--header-h) + 40px);
+    padding-top: calc(var(--header-h) + 32px);
     padding-bottom: 56px;
+  }
+  .hero__inner {
+    gap: 2rem;
+  }
+  .hero__copy {
+    width: 100%;
+  }
+  .hero__title,
+  .hero__desc {
+    max-width: 100%;
+  }
+  .hero__headline-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    margin-bottom: 1.25rem;
+  }
+  .hero__desc {
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 1.75rem;
   }
   .hero__btns {
     flex-direction: column;
     width: 100%;
+    gap: 0.875rem;
+    margin-bottom: 1.75rem;
   }
   .hero__btns .btn {
     width: 100%;
@@ -1303,7 +1461,23 @@ button {
     grid-template-columns: 1fr;
   }
   .contato__form-wrap {
-    padding: 1.5rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+  }
+  .hero__form-wrap {
+    width: 100%;
+    max-width: 100%;
+    justify-self: stretch;
+  }
+  .form__input,
+  .form__select {
+    width: 100%;
+  }
+  .btn {
+    white-space: normal;
+    text-align: center;
   }
   .footer__inner {
     grid-template-columns: 1fr;
@@ -1336,4 +1510,884 @@ button {
 }
 .plan-card--highlight .plan-card__desc-plan {
   color: rgba(255, 255, 255, 0.65);
+}
+
+/* ----------------------------------------------------------
+   16. WHATSAPP FLOAT BUTTON
+   ---------------------------------------------------------- */
+.whatsapp-float {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 120;
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  background: #25d366;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(37, 211, 102, 0.35);
+  transition:
+    transform var(--t-normal),
+    box-shadow var(--t-normal),
+    background var(--t-normal);
+  animation: whatsappPulse 2.2s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  background: #1ebe5d;
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 14px 36px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-float__icon {
+  width: 34px;
+  height: 34px;
+}
+
+@keyframes whatsappPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.42);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-float {
+    right: 18px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .whatsapp-float__icon {
+    width: 31px;
+    height: 31px;
+  }
+}
+
+/* ----------------------------------------------------------
+   17. AJUSTES FINAIS DOS CARDS DE PLANOS
+   ---------------------------------------------------------- */
+.plan-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan-card--light {
+  background: #1f4fa3;
+  border-color: #1f4fa3;
+  color: var(--white);
+}
+
+.plan-card--dark {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+}
+
+.plan-card--light .plan-card__name,
+.plan-card--dark .plan-card__name,
+.plan-card--light .plan-card__amount,
+.plan-card--dark .plan-card__amount {
+  color: var(--white);
+}
+
+.plan-card--light .plan-card__desc-plan,
+.plan-card--dark .plan-card__desc-plan,
+.plan-card--light .plan-card__period,
+.plan-card--dark .plan-card__period,
+.plan-card--light .plan-card__features li,
+.plan-card--dark .plan-card__features li {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.plan-card--light .plan-card__currency,
+.plan-card--dark .plan-card__currency {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.plan-card--light .plan-card__price,
+.plan-card--dark .plan-card__price {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.plan-card__features {
+  margin-bottom: 1.25rem;
+}
+
+.plan-card__more {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.plan-card__more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--blue);
+  cursor: pointer;
+  list-style: none;
+}
+
+.plan-card__more summary::-webkit-details-marker {
+  display: none;
+}
+
+.plan-card__more summary::after {
+  content: "+";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gray-100);
+  color: var(--blue);
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+.plan-card__more[open] summary::after {
+  content: "−";
+}
+
+.plan-card--light .plan-card__more summary,
+.plan-card--dark .plan-card__more summary {
+  color: var(--white);
+}
+
+.plan-card--light .plan-card__more summary::after,
+.plan-card--dark .plan-card__more summary::after {
+  background: rgba(255, 255, 255, 0.18);
+  color: var(--white);
+}
+
+.plan-card__more .plan-card__features {
+  margin-top: 0.85rem;
+  margin-bottom: 0;
+}
+
+.plan-card__badge--hot {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #fff3d7;
+  color: #b45309;
+  box-shadow: 0 8px 22px rgba(251, 191, 36, 0.22);
+}
+
+.plan-card__badge span {
+  font-size: 1.4rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+.plan-card > .btn {
+  margin-top: auto;
+}
+
+/* ----------------------------------------------------------
+   18. REFINO FINAL DOS BENEFÍCIOS DOS PLANOS
+   ---------------------------------------------------------- */
+.plan-card__more summary {
+  text-transform: none;
+}
+
+/* ----------------------------------------------------------
+   19. LOGOS DE EMPRESAS PARCEIRAS — PREMIUM
+   ---------------------------------------------------------- */
+.solucoes__logos-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(34, 182, 128, 0.12),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
+  border: 1px solid rgba(11, 30, 70, 0.1);
+  border-radius: 28px;
+  padding: 1.75rem;
+  margin-bottom: 2.75rem;
+  box-shadow:
+    0 22px 60px rgba(11, 30, 70, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.85);
+}
+
+.solucoes__logos-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(11, 30, 70, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(11, 30, 70, 0.04) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.45;
+}
+
+.solucoes__logos-header {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(135deg, var(--blue) 0%, #173a7c 100%);
+  color: var(--white);
+  border-radius: 20px;
+  padding: 1.15rem 1.25rem;
+  margin-bottom: 1.45rem;
+  text-align: center;
+  box-shadow: 0 14px 30px rgba(11, 30, 70, 0.22);
+}
+
+.solucoes__logos-kicker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 0.35rem;
+}
+
+.solucoes__logos-title {
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: clamp(1rem, 1.4vw, 1.25rem);
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.solucoes__logos-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.solucoes__logo-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  height: 108px;
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(11, 30, 70, 0.08);
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow:
+    0 10px 24px rgba(11, 30, 70, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+  transition:
+    transform var(--t-normal),
+    box-shadow var(--t-normal),
+    border-color var(--t-normal),
+    background var(--t-normal);
+}
+
+.solucoes__logo-item::after {
+  content: "";
+  position: absolute;
+  left: 18%;
+  right: 18%;
+  bottom: 10px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(34, 182, 128, 0.55),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity var(--t-normal);
+}
+
+.solucoes__logo-item:hover {
+  transform: translateY(-5px);
+  background: var(--white);
+  border-color: rgba(34, 182, 128, 0.35);
+  box-shadow:
+    0 18px 38px rgba(11, 30, 70, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.solucoes__logo-item:hover::after {
+  opacity: 1;
+}
+
+.solucoes__logo-item img {
+  width: 100%;
+  height: 100%;
+  max-height: 78px;
+  object-fit: contain;
+  display: block;
+  filter: saturate(0.95) contrast(1.04);
+}
+
+@media (max-width: 900px) {
+  .solucoes__logos-wrap {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .solucoes__logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .solucoes__logo-item {
+    height: 98px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solucoes__logos-wrap {
+    padding: 1rem;
+    border-radius: 22px;
+    margin-bottom: 2rem;
+  }
+
+  .solucoes__logos-header {
+    border-radius: 16px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .solucoes__logos-kicker {
+    font-size: 0.62rem;
+  }
+
+  .solucoes__logos-title {
+    font-size: 0.98rem;
+  }
+
+  .solucoes__logos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .solucoes__logo-item {
+    height: 88px;
+    border-radius: 16px;
+    padding: 0.75rem;
+  }
+
+  .solucoes__logo-item:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .solucoes__logos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .solucoes__logo-item {
+    height: 92px;
+    padding: 1rem;
+  }
+
+  .solucoes__logo-item:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .solucoes__logo-item img {
+    max-width: 85%;
+    max-height: 70px;
+    object-fit: contain;
+  }
+}
+
+/* ----------------------------------------------------------
+   20. APP PREVIEW NA SEÇÃO SOLUÇÕES
+   ---------------------------------------------------------- */
+.solucoes__app-preview {
+  position: relative;
+  width: 100%;
+  max-width: 430px;
+  min-height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+  isolation: isolate;
+}
+
+.solucoes__app-preview::before {
+  content: "";
+  position: absolute;
+  inset: 8%;
+  border-radius: 42px;
+  background:
+    radial-gradient(
+      circle at 20% 70%,
+      rgba(43, 80, 230, 0.13),
+      transparent 34%
+    ),
+    radial-gradient(circle at 82% 18%, rgba(43, 80, 230, 0.11), transparent 30%);
+  filter: blur(4px);
+  z-index: -2;
+}
+
+.solucoes__app-glow {
+  position: absolute;
+  border-radius: 50%;
+  border: 4px solid rgba(43, 80, 230, 0.16);
+  z-index: -1;
+}
+
+.solucoes__app-glow--one {
+  width: 145px;
+  height: 145px;
+  right: -8px;
+  top: 35px;
+}
+
+.solucoes__app-glow--two {
+  width: 170px;
+  height: 170px;
+  left: -28px;
+  bottom: 76px;
+  border-style: dashed;
+}
+
+.solucoes__app-img {
+  width: 50%;
+  max-width: 390px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 26px 48px rgba(11, 30, 70, 0.24));
+}
+
+/* ----------------------------------------------------------
+   21. SEÇÃO FINAL DE EMPRESAS PARCEIRAS
+   ---------------------------------------------------------- */
+.parceiros {
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(34, 182, 128, 0.09),
+      transparent 34%
+    ),
+    linear-gradient(180deg, #ffffff 0%, var(--gray-50) 100%);
+  padding-top: 90px;
+  padding-bottom: 90px;
+}
+
+.parceiros__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.parceiros .solucoes__logos-wrap {
+  display: block;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.parceiros .solucoes__logos-header {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.75rem;
+}
+
+.parceiros .solucoes__logos-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+
+.parceiros .solucoes__logo-item {
+  height: 126px;
+}
+
+.parceiros .solucoes__logo-item img {
+  max-height: 88px;
+}
+
+@media (max-width: 900px) {
+  .solucoes__app-preview {
+    max-width: 360px;
+    min-height: 430px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .solucoes__app-img {
+    max-width: 330px;
+  }
+
+  .parceiros .solucoes__logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .parceiros .solucoes__logo-item {
+    height: 108px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solucoes__app-preview {
+    min-height: 360px;
+    max-width: 300px;
+  }
+
+  .solucoes__app-img {
+    max-width: 280px;
+  }
+
+  .solucoes__app-glow--one {
+    width: 96px;
+    height: 96px;
+    right: -16px;
+    top: 28px;
+  }
+
+  .solucoes__app-glow--two {
+    width: 112px;
+    height: 112px;
+    left: -20px;
+    bottom: 56px;
+  }
+
+  .parceiros {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+
+  .parceiros .solucoes__logos-wrap {
+    padding: 1rem;
+  }
+
+  .parceiros .solucoes__logos-grid {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+
+  .parceiros .solucoes__logo-item {
+    height: 94px;
+    max-width: 100%;
+  }
+
+  .parceiros .solucoes__logo-item:last-child {
+    grid-column: auto;
+    max-width: 100%;
+  }
+
+  .parceiros .solucoes__logo-item img,
+  .parceiros .logo-wide {
+    transform: none;
+    max-width: 86%;
+    max-height: 72px;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   22. AJUSTES FINAIS — SOLUÇÕES E PARCEIROS
+   ---------------------------------------------------------- */
+
+/* Reduz o espaço superior/inferior da seção de soluções */
+.solucoes {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.solucoes__inner {
+  align-items: center;
+  gap: 3rem;
+}
+
+.solucoes__copy {
+  justify-content: center;
+}
+
+.solucoes__app-preview {
+  min-height: 360px;
+  max-width: 360px;
+  margin: 0 0 1.75rem;
+}
+
+.solucoes__app-preview::before {
+  inset: 4%;
+  filter: blur(2px);
+}
+
+.solucoes__app-img {
+  max-width: 280px;
+  filter: drop-shadow(0 22px 42px rgba(11, 30, 70, 0.18));
+}
+
+.solucoes__app-glow--one {
+  width: 115px;
+  height: 115px;
+  right: 4px;
+  top: 28px;
+}
+
+.solucoes__app-glow--two {
+  width: 130px;
+  height: 130px;
+  left: 4px;
+  bottom: 52px;
+}
+
+/* Seção final de empresas parceiras mais compacta */
+.parceiros {
+  padding-top: 56px;
+  padding-bottom: 64px;
+}
+
+.parceiros .solucoes__logos-wrap {
+  width: 100%;
+  max-width: 980px;
+  padding: 1.75rem;
+  border-radius: 26px;
+}
+
+.parceiros .solucoes__logos-header {
+  max-width: 720px;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  border-radius: 18px;
+}
+
+.parceiros .solucoes__logos-title {
+  font-size: clamp(1.15rem, 2vw, 1.45rem);
+}
+
+.parceiros .solucoes__logos-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.parceiros .solucoes__logo-item {
+  height: 118px;
+  padding: 1rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.parceiros .solucoes__logo-item img {
+  width: 100%;
+  height: 100%;
+  max-width: 92%;
+  max-height: 78px;
+  object-fit: contain;
+  transform: none;
+}
+
+/* Ajuste específico para logos horizontais ficarem equilibradas */
+.parceiros .logo-company-wide {
+  max-width: 112%;
+  max-height: 64px;
+  transform: scale(1.08);
+}
+
+.parceiros .logo-company-extra {
+  max-width: 120%;
+  max-height: 78px;
+  transform: scale(1.12);
+}
+
+/* Remove o scale global dentro da seção final, evitando estouro */
+.parceiros .logo-wide {
+  transform: none;
+}
+
+.parceiros .logo-company-wide {
+  transform: scale(1.08);
+}
+
+.parceiros .logo-company-extra {
+  transform: scale(1.12);
+}
+
+@media (max-width: 900px) {
+  .solucoes {
+    padding-top: 40px;
+    padding-bottom: 44px;
+  }
+
+  .solucoes__inner {
+    gap: 2rem;
+  }
+
+  .solucoes__app-preview {
+    min-height: 320px;
+    max-width: 310px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .solucoes__app-img {
+    max-width: 250px;
+  }
+
+  .parceiros {
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+
+  .parceiros .solucoes__logos-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .parceiros .solucoes__logo-item {
+    height: 104px;
+  }
+}
+
+@media (max-width: 600px) {
+  .solucoes {
+    padding-top: 32px;
+    padding-bottom: 36px;
+  }
+
+  .solucoes__app-preview {
+    min-height: 270px;
+    max-width: 260px;
+    margin-bottom: 1.25rem;
+  }
+
+  .solucoes__app-img {
+    max-width: 220px;
+  }
+
+  .solucoes__app-glow--one {
+    width: 82px;
+    height: 82px;
+    right: -6px;
+    top: 22px;
+  }
+
+  .solucoes__app-glow--two {
+    width: 92px;
+    height: 92px;
+    left: -8px;
+    bottom: 42px;
+  }
+
+  .parceiros {
+    padding-top: 42px;
+    padding-bottom: 48px;
+  }
+
+  .parceiros .solucoes__logos-wrap {
+    padding: 1rem;
+    border-radius: 22px;
+  }
+
+  .parceiros .solucoes__logos-header {
+    padding: 0.9rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .parceiros .solucoes__logos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .parceiros .solucoes__logo-item {
+    height: 86px;
+    padding: 0.75rem;
+  }
+
+  .parceiros .solucoes__logo-item:last-child {
+    grid-column: 1 / -1;
+    max-width: 52%;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .parceiros .solucoes__logo-item img,
+  .parceiros .logo-company-wide,
+  .parceiros .logo-company-extra,
+  .parceiros .logo-wide {
+    max-width: 88%;
+    max-height: 58px;
+    transform: none;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   23. BOTÕES DAS LOJAS ABAIXO DO CELULAR
+   ---------------------------------------------------------- */
+.solucoes__app-preview {
+  flex-direction: column;
+}
+
+.solucoes__app-stores {
+  width: 100%;
+  margin-top: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.solucoes__app-stores .footer__stores {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.solucoes__app-stores .store-btn {
+  background: var(--blue);
+  color: var(--white);
+  border-color: var(--blue);
+  box-shadow: 0 10px 26px rgba(11, 30, 70, 0.18);
+}
+
+.solucoes__app-stores .store-btn:hover {
+  background: var(--blue-hover);
+  border-color: var(--blue-hover);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+  .solucoes__app-stores {
+    margin-top: 1rem;
+  }
+
+  .solucoes__app-stores .footer__stores {
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .solucoes__app-stores .store-btn {
+    flex: 1;
+    min-width: 0;
+  }
 }
