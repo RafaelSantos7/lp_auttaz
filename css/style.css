@@ -2391,3 +2391,20 @@ textarea {
     min-width: 0;
   }
 }
+
+
+/* ----------------------------------------------------------
+   24. AJUSTE REDES SOCIAIS FOOTER
+   ---------------------------------------------------------- */
+.footer__social {
+  display: flex;
+  gap: 0.625rem;
+}
+
+.footer__social .social-link {
+  color: var(--white);
+}
+
+.footer__social .social-link svg {
+  stroke: currentColor;
+}
