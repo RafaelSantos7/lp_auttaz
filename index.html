@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <link rel="icon" type="image/x-icon" href="./assets/img/logo-favicon.png" />
   </head>
   <body>
@@ -18,13 +18,16 @@
     <header class="header" id="header">
       <div class="container header__inner">
         <a href="#" class="header__logo" aria-label="Logo da empresa">
-          <img src="assets/img/logo-header.png" alt="Logo" class="logo-img" />
+          <img src="./assets/img/logo002.png" alt="Logo" class="logo-img" />
         </a>
         <nav class="header__nav" aria-label="Navegação principal">
           <ul class="nav__list">
-            <li><a href="#solucoes" class="nav__link">Produtos</a></li>
+            <li><a href="#solucoes" class="nav__link">Solução</a></li>
             <li><a href="#vantagens" class="nav__link">Vantagens</a></li>
             <li><a href="#planos" class="nav__link">Planos</a></li>
+            <li>
+              <a href="#por-que-auttaz" class="nav__link">Por que Auttaz</a>
+            </li>
           </ul>
         </nav>
         <div class="header__actions">
@@ -42,9 +45,14 @@
       </div>
       <div class="mobile-nav" id="mobileNav" aria-hidden="true">
         <ul class="mobile-nav__list">
-          <li><a href="#solucoes" class="mobile-nav__link">Produtos</a></li>
+          <li><a href="#solucoes" class="mobile-nav__link">Solução</a></li>
           <li><a href="#vantagens" class="mobile-nav__link">Vantagens</a></li>
           <li><a href="#planos" class="mobile-nav__link">Planos</a></li>
+          <li>
+            <a href="#por-que-auttaz" class="mobile-nav__link"
+              >Por que Auttaz</a
+            >
+          </li>
           <li class="mobile-nav__divider"></li>
           <li><a href="#" class="btn btn--ghost btn--full">Entrar</a></li>
           <li>
@@ -60,237 +68,80 @@
       <!-- ========== HERO ========== -->
       <section class="hero" id="inicio">
         <div class="container hero__inner">
-          <div class="contato__form-wrap hero__form-wrap">
-            <form
-              id="leadForm"
-              action="URL_FORMSPREE_AQUI"
-              method="POST"
-              novalidate
-            >
-              <div
-                id="formSuccess"
-                class="form-success"
-                hidden
-                aria-live="polite"
-              >
-                <svg
-                  width="44"
-                  height="44"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#22b680"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <strong>Dados recebidos!</strong>
-                <p>Em breve entraremos em contato.</p>
-              </div>
-              <div class="form__section-title">Seus dados</div>
-              <div class="form__group form__group--full">
-                <label class="form__label" for="nome"
-                  >Nome <span class="form__req">*</span></label
-                >
-                <input
-                  class="form__input"
-                  type="text"
-                  id="nome"
-                  name="nome"
-                  placeholder="Insira seu nome"
-                  required
-                />
-              </div>
-              <div class="form__row">
-                <div class="form__group">
-                  <label class="form__label" for="email"
-                    >Email <span class="form__req">*</span></label
-                  >
-                  <input
-                    class="form__input"
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Insira seu melhor email"
-                    required
-                  />
-                </div>
-                <div class="form__group">
-                  <label class="form__label" for="celular"
-                    >Celular <span class="form__req">*</span></label
-                  >
-                  <input
-                    class="form__input"
-                    type="tel"
-                    id="celular"
-                    name="celular"
-                    placeholder="(00) 00000-0000"
-                    required
-                  />
-                </div>
-              </div>
-              <div class="form__section-title">Dados da empresa</div>
-              <div class="form__group form__group--full">
-                <label class="form__label" for="empresa"
-                  >Nome da empresa <span class="form__req">*</span></label
-                >
-                <input
-                  class="form__input"
-                  type="text"
-                  id="empresa"
-                  name="empresa"
-                  placeholder="Insira o nome da empresa"
-                  required
-                />
-              </div>
-              <div class="form__row">
-                <div class="form__group">
-                  <label class="form__label" for="funcionarios"
-                    >Qtd. de funcionários
-                    <span class="form__req">*</span></label
-                  >
-                  <div class="form__select-wrap">
-                    <select
-                      class="form__select"
-                      id="funcionarios"
-                      name="funcionarios"
-                      required
-                    >
-                      <option value="" disabled selected>Selecione</option>
-                      <option value="1-10">1 a 10</option>
-                      <option value="11-25">11 a 25</option>
-                      <option value="26-50">26 a 50</option>
-                      <option value="51-100">51 a 100</option>
-                      <option value="100+">Mais de 100</option>
-                    </select>
-                    <svg
-                      class="form__select-arrow"
-                      width="12"
-                      height="8"
-                      viewBox="0 0 12 8"
-                      fill="none"
-                    >
-                      <path
-                        d="M1 1l5 5 5-5"
-                        stroke="#7a869a"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <div class="form__group">
-                  <label class="form__label" for="segmento"
-                    >Segmento <span class="form__req">*</span></label
-                  >
-                  <div class="form__select-wrap">
-                    <select
-                      class="form__select"
-                      id="segmento"
-                      name="segmento"
-                      required
-                    >
-                      <option value="" disabled selected>Selecione</option>
-                      <option value="varejo">Varejo</option>
-                      <option value="servicos">Serviços</option>
-                      <option value="industria">Indústria</option>
-                      <option value="saude">Saúde</option>
-                      <option value="logistica">Logística</option>
-                      <option value="tecnologia">Tecnologia</option>
-                      <option value="outro">Outro</option>
-                    </select>
-                    <svg
-                      class="form__select-arrow"
-                      width="12"
-                      height="8"
-                      viewBox="0 0 12 8"
-                      fill="none"
-                    >
-                      <path
-                        d="M1 1l5 5 5-5"
-                        stroke="#7a869a"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-              <label class="form__checkbox">
-                <input type="checkbox" name="privacidade" required />
-                <span
-                  >Ao informar meus dados, eu concordo com a
-                  <a href="./politica_de_privacidade.html" class="form__link"
-                    >Política de Privacidade</a
-                  >.</span
-                >
-              </label>
-              <button
-                type="submit"
-                class="btn btn--primary btn--full btn--lg form__submit"
-              >
-                <svg
-                  width="16"
-                  height="16"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <line x1="22" y1="2" x2="11" y2="13" />
-                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                </svg>
-                Enviar e receber contato
-              </button>
-            </form>
-          </div>
           <div class="hero__copy">
+            <span class="hero__eyebrow">Ponto Eletrônico Auttaz</span>
             <div class="hero__headline-row">
               <h1 class="hero__title">
-                Simplifique com<br />
-                Ponto Eletrônico
+                Controle a jornada da sua equipe com mais segurança e menos
+                burocracia.
               </h1>
             </div>
             <p class="hero__desc">
-              Controle absoluto de <strong>horas trabalhadas</strong>,
-              <strong>conformidade legal garantida</strong> (CLT, acordos
-              coletivos e normas da Justiça do Trabalho),
-              <strong>marcações com reconhecimento facial</strong>,
-              <strong>geolocalização</strong> e
-              <strong>funcionamento offline</strong>, de acordo com a Portaria
-              671 desde escalas fixas até turnos rotativos, plantões ou home
-              office com o ponto eletrônico <strong>Auttaz</strong>: Sua empresa
-              <strong>sem complicação para qualquer escala.</strong>
+              Registre e acompanhe a jornada dos colaboradores em uma plataforma
+              completa, com funcionamento online e offline, geolocalização,
+              reconhecimento facial e recursos que facilitam a rotina do RH.
             </p>
             <div class="hero__btns">
               <a href="#contato" class="btn btn--primary btn--lg"
-                >Comece grátis</a
+                >Quero testar gratuitamente</a
               >
               <a href="#contato" class="btn btn--outline btn--lg"
                 >Agendar uma demonstração</a
               >
             </div>
-            <div class="hero__trial">
-              <span class="hero__trial-icon">
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="3"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </span>
-              <span>Teste grátis por 7 dias</span>
-            </div>
+            <ul class="hero__checklist checklist">
+              <li>
+                <span class="checklist__icon">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span>Teste grátis por 7 dias</span>
+              </li>
+              <li>
+                <span class="checklist__icon">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span>Suporte durante a implantação</span>
+              </li>
+              <li>
+                <span class="checklist__icon">
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span>Em conformidade com a Portaria 671</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -300,244 +151,22 @@
         <div class="container">
           <div class="section-header">
             <h2 class="section-title section-title--center">
-              Otimize o controle de jornada da sua equipe com um sistema
-              completo
+              Escolha a solução mais adequada para a sua empresa
             </h2>
             <p class="section-desc section-desc--center">
-              Escolha o plano ideal para a sua empresa
+              Do controle essencial da jornada a uma solução mais completa de
+              benefícios e saúde para os colaboradores.
             </p>
           </div>
 
           <div class="planos__grid planos__grid--3">
-            <!-- Plano Ponto -->
-            <div class="plan-card">
-              <div class="plan-card__badge">Básico</div>
-              <h3 class="plan-card__name">Plano Ponto</h3>
-              <p class="plan-card__desc-plan">Somente o Ponto</p>
-              <div class="plan-card__price">
-                <span class="plan-card__currency">R$</span>
-                <span class="plan-card__amount">14,90</span>
-                <span class="plan-card__period">/ colaborador</span>
-              </div>
-              <ul class="plan-card__features">
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#22b680"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Pontos ilimitados
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#22b680"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Ajustes ilimitados
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#22b680"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Relatórios de jornada
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#22b680"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Arquivos AFD e AEJ
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#22b680"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Ponto online e offline
-                </li>
-              </ul>
-              <a href="#contato" class="btn btn--primary btn--full"
-                >Começar agora</a
-              >
-            </div>
-
-            <!-- Ponto Clube -->
-            <div class="plan-card plan-card--highlight plan-card--light">
-              <div class="plan-card__badge plan-card__badge--hot">
-                Custo Beneficio
-              </div>
-              <h3 class="plan-card__name">Ponto Clube</h3>
-              <p class="plan-card__desc-plan">Acesso ao clube de benefícios</p>
-              <div class="plan-card__price">
-                <span class="plan-card__currency">R$</span>
-                <span class="plan-card__amount">24,90</span>
-                <span class="plan-card__period">/ colaborador</span>
-              </div>
-              <ul class="plan-card__features">
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="rgba(255,255,255,.9)"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Clube de Benefícios
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="rgba(255,255,255,.9)"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Desconto Exclusivos
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="rgba(255,255,255,.9)"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Ponto online e offline
-                </li>
-                <li>
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="rgba(255,255,255,.9)"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <polyline points="20 6 9 17 4 12" /></svg
-                  >Parcerias e vantagens
-                </li>
-              </ul>
-              <details class="plan-card__more">
-                <summary>Ver mais benefícios</summary>
-                <ul class="plan-card__features">
-                  <li>
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="rgba(255,255,255,.9)"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" /></svg
-                    >Pontos ilimitados
-                  </li>
-                  <li>
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="rgba(255,255,255,.9)"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" /></svg
-                    >Ajustes ilimitados
-                  </li>
-                  <li>
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="rgba(255,255,255,.9)"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" /></svg
-                    >Relatórios de jornada
-                  </li>
-                  <li>
-                    <svg
-                      width="15"
-                      height="15"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="rgba(255,255,255,.9)"
-                      stroke-width="2.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    >
-                      <polyline points="20 6 9 17 4 12" /></svg
-                    >Arquivos AFD e AEJ
-                  </li>
-                </ul>
-              </details>
-              <a href="#contato" class="btn btn--white btn--full"
-                >Começar agora</a
-              >
-            </div>
-
-            <!-- Plano Ponto Med Clube -->
+            <!-- 1. Plano Clube Med (destaque) -->
             <div class="plan-card plan-card--highlight plan-card--dark">
-              <div class="plan-card__badge"><span>🔥</span>Mais Vendido</div>
+              <div class="plan-card__badge"><span>⭐</span>Recomendado</div>
               <h3 class="plan-card__name">Plano Clube Med</h3>
               <p class="plan-card__desc-plan">
-                Ponto, Telemedicina e Clube de Benefícios
+                Para empresas que querem reunir gestão de jornada, benefícios e
+                saúde corporativa em uma solução mais completa.
               </p>
               <div class="plan-card__price">
                 <span class="plan-card__currency">R$</span>
@@ -706,8 +335,275 @@
                 </ul>
               </details>
               <a href="#contato" class="btn btn--white btn--full"
-                >Começar agora</a
+                >Escolher Clube Med</a
               >
+            </div>
+
+            <!-- 2. Ponto Clube -->
+            <div class="plan-card plan-card--highlight plan-card--light">
+              <h3 class="plan-card__name">Ponto Clube</h3>
+              <p class="plan-card__desc-plan">
+                Para empresas que desejam controlar a jornada e oferecer
+                benefícios adicionais aos colaboradores.
+              </p>
+              <div class="plan-card__price">
+                <span class="plan-card__currency">R$</span>
+                <span class="plan-card__amount">24,90</span>
+                <span class="plan-card__period">/ colaborador</span>
+              </div>
+              <ul class="plan-card__features">
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Clube de Benefícios
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Desconto Exclusivos
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Ponto online e offline
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="rgba(255,255,255,.9)"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Parcerias e vantagens
+                </li>
+              </ul>
+              <details class="plan-card__more">
+                <summary>Ver mais benefícios</summary>
+                <ul class="plan-card__features">
+                  <li>
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="rgba(255,255,255,.9)"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Pontos ilimitados
+                  </li>
+                  <li>
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="rgba(255,255,255,.9)"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Ajustes ilimitados
+                  </li>
+                  <li>
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="rgba(255,255,255,.9)"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Relatórios de jornada
+                  </li>
+                  <li>
+                    <svg
+                      width="15"
+                      height="15"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="rgba(255,255,255,.9)"
+                      stroke-width="2.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" /></svg
+                    >Arquivos AFD e AEJ
+                  </li>
+                </ul>
+              </details>
+              <a href="#contato" class="btn btn--white btn--full"
+                >Escolher Ponto Clube</a
+              >
+            </div>
+
+            <!-- 3. Plano Ponto -->
+            <div class="plan-card">
+              <div class="plan-card__badge">Básico</div>
+              <h3 class="plan-card__name">Plano Ponto</h3>
+              <p class="plan-card__desc-plan">
+                Para empresas que precisam organizar e acompanhar a jornada dos
+                colaboradores.
+              </p>
+              <div class="plan-card__price">
+                <span class="plan-card__currency">R$</span>
+                <span class="plan-card__amount">14,90</span>
+                <span class="plan-card__period">/ colaborador</span>
+              </div>
+              <ul class="plan-card__features">
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22b680"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Pontos ilimitados
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22b680"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Ajustes ilimitados
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22b680"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Relatórios de jornada
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22b680"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Arquivos AFD e AEJ
+                </li>
+                <li>
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="#22b680"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polyline points="20 6 9 17 4 12" /></svg
+                  >Ponto online e offline
+                </li>
+              </ul>
+              <a href="#contato" class="btn btn--primary btn--full"
+                >Escolher Plano Ponto</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== POR QUE AUTTAZ ========== -->
+      <section class="por-que-auttaz section" id="por-que-auttaz">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title section-title--center">
+              Por que escolher a Auttaz?
+            </h2>
+            <p class="section-desc section-desc--center">
+              Mais do que oferecer um sistema de ponto eletrônico, a Auttaz
+              reúne soluções que simplificam a gestão das empresas e contribuem
+              para uma relação mais completa com seus colaboradores.
+            </p>
+          </div>
+          <div class="por-que-auttaz__grid">
+            <div class="por-que-auttaz__card">
+              <h3 class="por-que-auttaz__title">Tecnologia que simplifica</h3>
+              <p class="por-que-auttaz__desc">
+                Recursos para organizar a jornada e facilitar a rotina de
+                gestores e colaboradores.
+              </p>
+            </div>
+            <div class="por-que-auttaz__card">
+              <h3 class="por-que-auttaz__title">Atendimento próximo</h3>
+              <p class="por-que-auttaz__desc">
+                Suporte humanizado durante a implantação e utilização da
+                plataforma.
+              </p>
+            </div>
+            <div class="por-que-auttaz__card">
+              <h3 class="por-que-auttaz__title">
+                Soluções que evoluem com o negócio
+              </h3>
+              <p class="por-que-auttaz__desc">
+                Além do ponto eletrônico, a Auttaz reúne soluções que podem
+                acompanhar o crescimento da empresa.
+              </p>
             </div>
           </div>
         </div>
@@ -718,17 +614,18 @@
         <div class="container">
           <div class="section-header">
             <h2 class="section-title section-title--center">
-              Vantagens que você garante com o sistema
+              Mais controle para a empresa. Mais facilidade para sua equipe.
             </h2>
           </div>
           <div class="vantagens__grid">
             <div class="vant-card">
               <h3 class="vant-card__title">
-                Acesso em qualquer dispositivo com ou sem internet
+                Registre o ponto em qualquer lugar
               </h3>
               <p class="vant-card__desc">
-                Ao bater o ponto, a plataforma salva as informações até que a
-                conexão retorne.
+                Permita que os colaboradores registrem a jornada pelo
+                computador, smartphone ou tablet, mesmo quando estiverem sem
+                conexão com a internet.
               </p>
               <ul class="vant-card__list">
                 <li>
@@ -781,15 +678,14 @@
                   >Tablet
                 </li>
               </ul>
-              <a href="#inicio" class="btn btn--primary btn--full"
-                >Teste grátis</a
-              >
             </div>
             <div class="vant-card">
-              <h3 class="vant-card__title">Segurança contra fraudes</h3>
+              <h3 class="vant-card__title">
+                Reduza falhas e marcações indevidas
+              </h3>
               <p class="vant-card__desc">
-                Evite transtornos causados pelas vulnerabilidades dos sistemas
-                tradicionais de ponto.
+                Tenha mais segurança no controle da jornada com recursos que
+                ajudam a confirmar onde e como cada registro foi realizado.
               </p>
               <ul class="vant-card__list">
                 <li>
@@ -881,15 +777,14 @@
                   >Criptografia
                 </li>
               </ul>
-              <a href="#inicio" class="btn btn--primary btn--full"
-                >Teste grátis</a
-              >
             </div>
             <div class="vant-card">
-              <h3 class="vant-card__title">Suporte sem taxas extras</h3>
+              <h3 class="vant-card__title">
+                Conte com suporte quando precisar
+              </h3>
               <p class="vant-card__desc">
-                Conte com suporte humanizado para auxiliar sua empresa sempre
-                que precisar.
+                Tenha atendimento próximo durante o uso da plataforma, sem taxas
+                adicionais de suporte.
               </p>
               <ul class="vant-card__list">
                 <li>
@@ -959,10 +854,12 @@
                   >Base de conhecimento
                 </li>
               </ul>
-              <a href="#inicio" class="btn btn--primary btn--full"
-                >Teste grátis</a
-              >
             </div>
+          </div>
+          <div class="vantagens__cta">
+            <a href="#planos" class="btn btn--primary btn--lg"
+              >Conhecer os planos</a
+            >
           </div>
         </div>
       </section>
@@ -1024,13 +921,13 @@
             </div>
           </div>
           <h2 class="section-title">
-            Soluções otimizadas para o controle e registro de ponto
+            Uma plataforma completa para gestores e colaboradores
           </h2>
           <p class="section-desc">
-            Tenha uma plataforma completa para acompanhar jornadas, registrar
-            pontos e simplificar a rotina do RH.
+            Acompanhe jornadas, organize registros e simplifique a rotina do RH
+            com diferentes formas de acesso à mesma solução.
           </p>
-          <a href="#inicio" class="btn btn--primary">Saiba mais</a>
+          <a href="#planos" class="btn btn--primary">Ver planos disponíveis</a>
         </div>
         <div class="solucoes__cards">
           <div class="sol-card">
@@ -1062,10 +959,10 @@
               </svg>
             </div>
             <div class="sol-card__body">
-              <h3 class="sol-card__title">Sistema web</h3>
+              <h3 class="sol-card__title">Sistema Web</h3>
               <p class="sol-card__desc">
-                Uma plataforma web completa com funcionalidades de gestão e
-                controle de ponto para gestores.
+                Uma plataforma completa para gestores acompanharem jornadas,
+                conferirem registros e administrarem o controle de ponto.
               </p>
             </div>
           </div>
@@ -1095,10 +992,10 @@
               </svg>
             </div>
             <div class="sol-card__body">
-              <h3 class="sol-card__title">Aplicativo colaborador</h3>
+              <h3 class="sol-card__title">Aplicativo</h3>
               <p class="sol-card__desc">
-                Aplicativo prático e simples que permite o registro de ponto e
-                acompanhamento da jornada.
+                Um aplicativo simples para registrar o ponto e acompanhar a
+                jornada pelo celular.
               </p>
             </div>
           </div>
@@ -1135,8 +1032,8 @@
             <div class="sol-card__body">
               <h3 class="sol-card__title">Smart Ponto</h3>
               <p class="sol-card__desc">
-                Funcionalidade para registro de ponto centralizado em um
-                dispositivo no local da empresa.
+                Uma opção para centralizar os registros em um dispositivo
+                disponível na empresa.
               </p>
             </div>
           </div>
@@ -1149,7 +1046,9 @@
       <div class="container parceiros__inner">
         <div class="solucoes__logos-wrap">
           <div class="solucoes__logos-header">
-            <span class="solucoes__logos-kicker">Empresas parceiras</span>
+            <span class="solucoes__logos-kicker"
+              >Empresas que confiam na Auttaz</span
+            >
             <p class="solucoes__logos-title">
               Marcas que já utilizam nossa solução
             </p>
@@ -1187,19 +1086,224 @@
       </div>
     </section>
 
+    <!-- ========== FORMULÁRIO ========== -->
+    <section class="contato section" id="contato">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title section-title--center">
+            Quer conhecer o Ponto Eletrônico Auttaz?
+          </h2>
+          <p class="section-desc section-desc--center">
+            Preencha seus dados para testar a solução ou conversar com nossa
+            equipe.
+          </p>
+        </div>
+        <div class="contato__form-wrap contato__form-standalone">
+          <form
+            id="leadForm"
+            action="URL_FORMSPREE_AQUI"
+            method="POST"
+            novalidate
+          >
+            <div
+              id="formSuccess"
+              class="form-success"
+              hidden
+              aria-live="polite"
+            >
+              <svg
+                width="44"
+                height="44"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#22b680"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+              <strong>Dados recebidos!</strong>
+              <p>Em breve entraremos em contato.</p>
+            </div>
+            <div class="form__group form__group--full">
+              <label class="form__label" for="nome"
+                >Nome <span class="form__req">*</span></label
+              >
+              <input
+                class="form__input"
+                type="text"
+                id="nome"
+                name="nome"
+                placeholder="Insira seu nome"
+                required
+              />
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="email"
+                  >Email <span class="form__req">*</span></label
+                >
+                <input
+                  class="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Insira seu melhor email"
+                  required
+                />
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="celular"
+                  >Celular <span class="form__req">*</span></label
+                >
+                <input
+                  class="form__input"
+                  type="tel"
+                  id="celular"
+                  name="celular"
+                  placeholder="(00) 00000-0000"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form__section-title">Dados da empresa</div>
+            <div class="form__group form__group--full">
+              <label class="form__label" for="empresa"
+                >Nome da empresa <span class="form__req">*</span></label
+              >
+              <input
+                class="form__input"
+                type="text"
+                id="empresa"
+                name="empresa"
+                placeholder="Insira o nome da empresa"
+                required
+              />
+            </div>
+            <div class="form__row">
+              <div class="form__group">
+                <label class="form__label" for="funcionarios"
+                  >Qtd. de funcionários <span class="form__req">*</span></label
+                >
+                <div class="form__select-wrap">
+                  <select
+                    class="form__select"
+                    id="funcionarios"
+                    name="funcionarios"
+                    required
+                  >
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1-10">1 a 10</option>
+                    <option value="11-25">11 a 25</option>
+                    <option value="26-50">26 a 50</option>
+                    <option value="51-100">51 a 100</option>
+                    <option value="100+">Mais de 100</option>
+                  </select>
+                  <svg
+                    class="form__select-arrow"
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 1l5 5 5-5"
+                      stroke="#7a869a"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+              <div class="form__group">
+                <label class="form__label" for="segmento"
+                  >Segmento <span class="form__req">*</span></label
+                >
+                <div class="form__select-wrap">
+                  <select
+                    class="form__select"
+                    id="segmento"
+                    name="segmento"
+                    required
+                  >
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="varejo">Varejo</option>
+                    <option value="servicos">Serviços</option>
+                    <option value="industria">Indústria</option>
+                    <option value="saude">Saúde</option>
+                    <option value="logistica">Logística</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                  <svg
+                    class="form__select-arrow"
+                    width="12"
+                    height="8"
+                    viewBox="0 0 12 8"
+                    fill="none"
+                  >
+                    <path
+                      d="M1 1l5 5 5-5"
+                      stroke="#7a869a"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <label class="form__checkbox">
+              <input type="checkbox" name="privacidade" required />
+              <span
+                >Ao informar meus dados, eu concordo com a
+                <a href="./politica_de_privacidade.html" class="form__link"
+                  >Política de Privacidade</a
+                >.</span
+              >
+            </label>
+            <button
+              type="submit"
+              class="btn btn--primary btn--full btn--lg form__submit"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              Quero conhecer a solução
+            </button>
+          </form>
+          <p class="form__footnote">
+            Após o preenchimento, nossa equipe entrará em contato para orientar
+            os próximos passos.
+          </p>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== FOOTER ========== -->
     <footer class="footer">
       <div class="container footer__inner">
         <div class="footer__brand">
           <a href="#" class="footer__logo" aria-label="Logo">
             <img
-              src="./assets/img/logo-footer.png"
+              src="./assets/img/logo003.png"
               alt="Logo"
               class="logo-img logo-img--footer"
             />
           </a>
           <p class="footer__tagline">
-            Gestão de ponto inteligente para sua empresa.
+            Um novo valor para as demandas de sempre.
           </p>
           <div class="footer__social">
             <a
@@ -1252,7 +1356,7 @@
             <li><a href="#vantagens">Vantagens</a></li>
             <li><a href="#planos">Como funciona</a></li>
             <li><a href="#planos">Planos</a></li>
-            <li><a href="#inicio">Solicite uma demonstração</a></li>
+            <li><a href="#contato">Solicite uma demonstração</a></li>
           </ul>
         </div>
         <div class="footer__contact">
